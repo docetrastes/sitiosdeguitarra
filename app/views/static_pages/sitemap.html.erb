@@ -1,0 +1,19 @@
+<% title "Mapa del sitio" %>
+
+<h2>Sitios</h2>
+
+<ul>
+  <% @sites.each do |site| %>
+    <li><%= link_to site.title, site %></li>
+  <% end %>
+</ul>
+
+<h2>Tags</h2>
+
+<ul>
+  <% @tags.each do |tag| %>
+    <li><span class="tag"><%= link_to tag.name, tag %></span></li>
+  <% end %>
+</ul>
+
+<%= link_to '← Página principal', root_path %>

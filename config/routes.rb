@@ -6,6 +6,7 @@ Sitiosdeguitarra::Application.routes.draw do
   end
 
   match "/politicas-de-privacidad" => "static_pages#privacy_policy", :as => :privacy_policy
+  match "/mapa-del-sitio" => "static_pages#sitemap", :as => :sitemap
 
   match "/" => "sites#index", :as => :sites
   root :to => "sites#index"
