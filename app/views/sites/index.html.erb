@@ -11,7 +11,7 @@
         <%= link_to "Editar", edit_site_path(site) %> | 
         <%= link_to "Suprimir", site_path(site), :method => :delete, :confirm => "¿Estás seguro?" %>
       <% end %>
-      <div class="url"><%= site.url %></div>
+      <div class="url"><%= host_from_url(site.url) %></div>
       <div class="review"><%= site.review.html_safe %></div>
     </div>
   <% end %>
