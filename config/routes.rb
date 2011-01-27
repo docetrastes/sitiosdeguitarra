@@ -4,5 +4,6 @@ Sitiosdeguitarra::Application.routes.draw do
     resource :session, :path => "sesion", :only => [ :new, :create, :destroy ]
   end
   
+  match "/politicas-de-privacidad" => "static_pages#privacy_policy", :as => :privacy_policy
   root :to => "sites#index"
 end
