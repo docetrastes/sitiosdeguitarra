@@ -1,0 +1,20 @@
+<% title "Site" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @site.title %>
+</p>
+<p>
+  <strong>Url:</strong>
+  <%= @site.url %>
+</p>
+<p>
+  <strong>Review:</strong>
+  <%= @site.review %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_site_path(@site) %> |
+  <%= link_to "Destroy", @site, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", sites_path %>
+</p>

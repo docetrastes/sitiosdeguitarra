@@ -1,0 +1,21 @@
+<% title "Reseñas de sitios de guitarra en español" %>
+<% meta_description "Directorio de sitios de guitarra en español con una crítica objetiva e imparcial." %>
+
+<h3>Una nueva reseña cada semana</h3>
+
+<% for site in @sites %>
+  <%= div_for(site) do %>
+    <h2><%= link_to site.title, site.url %></h2>
+    <% if admin? %>
+      <%= link_to "Editar", edit_site_path(site) %> | 
+      <%= link_to "Suprimir", site_path(site), :method => :delete, :confirm => "¿Estás seguro?" %>
+    <% end %>
+    <div class="url"><%= site.url %></div>
+    <div class="review"><%= site.review.html_safe %></div>
+  <% end %>
+<% end %>
+
+
+<% if admin? %>
+  <p><%= link_to "Nuevo Sito", new_site_path(site) %></p>
+<% end %>

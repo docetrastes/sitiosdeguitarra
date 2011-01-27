@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+    <title><%= content_for?(:title) ? yield(:title) : "Sin título" %> | SitiosDeGuitarra.com</title>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div id="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    </div>
+    
+    <div id="footer">
+      <%= link_to "Sitios de guitarra", root_path %> |
+      <%= link_to "Acordes para guitarra", "http://lacuerda.net/in.php?site=1296085885" %> | 
+      <%= mail_to "editorial+webspam@sitiosdeguitarra.com", "Contacto" %> |
+      <%= link_to "Trastienda", new_session_path %> |
+      <%= Time.now.year %> © Doce Trastes
+      <% if admin? %>
+        | <%= link_to "Salir", session_path, :method => :delete %>
+      <% end %>
+    </div>
+  </body>
+</html>
