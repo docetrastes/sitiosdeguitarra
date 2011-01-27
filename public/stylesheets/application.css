@@ -109,3 +109,17 @@ h3 {
   margin-top: 0px;
   text-align: right;
 }
+
+.site .thumbnail {
+  float: left;
+  margin-top: 20px;
+}
+
+.site .content {
+  float: left;
+  margin-left: 20px;
+}
+
+.site {
+  margin-top: 20px;
+}
