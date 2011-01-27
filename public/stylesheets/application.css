@@ -23,7 +23,7 @@ h2 {
 }
 
 #container {
-  width: 75%;
+  width: 800px;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
@@ -118,6 +118,7 @@ h3 {
 .site .content {
   float: left;
   margin-left: 20px;
+  width: 650px;
 }
 
 .site {
