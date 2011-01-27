@@ -1,0 +1,22 @@
+<%= div_for(site) do %>
+  <div class="thumbnail"><%= thumbshot_tag(site) %></div>
+  <div class="content">
+    <% if current_page?(site) %>
+      <h2><%= link_to site.title, site.url %></h2>    
+    <% else %>
+      <h2><%= link_to site.title, site %></h2>
+    <% end %>
+    <% if admin? %>
+      <%= link_to "Editar", edit_site_path(site) %> | 
+      <%= link_to "Suprimir", site_path(site), :method => :delete, :confirm => "¿Estás seguro?" %>
+    <% end %>
+    <div class="url"><%= host_from_url(site.url) %></div>
+    <div class="tags">
+      <% for tag in site.tags %>
+        <span class="tag"><%= link_to tag.name, tag %></span>
+      <% end %>
+    </div>      
+    <div class="review"><%= yield if block_given? %></div>
+  </div>
+  <div class="clear"></div>
+<% end %>

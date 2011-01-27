@@ -1,20 +1,14 @@
-<% title "Site" %>
+<% title @site.title %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @site.title %>
-</p>
-<p>
-  <strong>Url:</strong>
-  <%= @site.url %>
-</p>
-<p>
-  <strong>Review:</strong>
-  <%= @site.review %>
-</p>
+<%= render :layout => @site do %>
+    <%= @site.review.html_safe %>
+<% end %>
 
-<p>
-  <%= link_to "Edit", edit_site_path(@site) %> |
-  <%= link_to "Destroy", @site, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", sites_path %>
+<% if admin? %>
+  <p>
+    <%= link_to "Editar", edit_site_path(@site) %> |
+    <%= link_to "Suprimir", @site, :confirm => '¿Estás seguro?', :method => :delete %>
+  </p>
+<% end %>
+  <%= link_to '← Todos los sitios', sites_path %>
 </p>

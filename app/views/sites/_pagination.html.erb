@@ -1,5 +1,5 @@
 <p class="pagination">
-  <%= link_to '← Anterior', params.merge(:page => @sites.previous_page) if @sites.previous_page %>
+  <%= link_to '← Anterior', params.merge(:page => @sites.previous_page == 1 ? nil : @sites.previous_page) if @sites.previous_page %>
   <%= "|" if @sites.previous_page && @sites.next_page %>
-  <%= link_to 'Siguiente →', params.merge(:page => @sites.next_page) if @sites.next_page %>
+  <%= link_to 'Siguiente →', params.merge(:page => @sites.next_page == 1 ? nil : @sites.next_page) if @sites.next_page %>
 </p>

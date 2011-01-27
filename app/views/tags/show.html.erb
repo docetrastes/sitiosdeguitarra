@@ -1,0 +1,21 @@
+<% title @tag.name.capitalize %>
+<% meta_description "Sitios de guitarra en la categoria '#{@tag.name.capitalize}'." %>
+
+<h3>Sitios de guitarra en la categoría <span class="tag"><%= link_to @tag.name, @tag %></span></h3>
+
+
+<% for site in @sites %>
+  <%= render :layout => site do %>
+      <%= site.review.html_safe %>
+  <% end %>
+<% end %>
+
+<% if admin? %>
+  <p>
+    <%= link_to "Editar", edit_tag_path(@tag) %> |
+    <%= link_to "Suprimir", @tag, :confirm => '¿Estás seguro?', :method => :delete %>
+  </p>
+<% end %>
+
+  <%= link_to '← Todos los sitios', sites_path %>
+</p>

@@ -20,7 +20,6 @@
     
     <div id="footer">
       <%= link_to "Sitios de guitarra", root_path %> |
-      <a href="http://www.thumbshots.com" target="_blank" title="Thumbnails Screenshots by Thumbshots">Thumbnail Screenshots by Thumbshots</a> |
       <%= link_to "Políticas de privacidad", privacy_policy_path %> |       
       <%= mail_to "editorial+webspam@sitiosdeguitarra.com", "Contacto" %> |
       <%= link_to "Trastienda", new_session_path %> |
@@ -28,6 +27,9 @@
       <% if admin? %>
         | <%= link_to "Salir", session_path, :method => :delete %>
       <% end %>
+      
+
+      <div style="font-size: 0.7em; margin-top: 5px;"><a href="http://www.thumbshots.com" target="_blank" title="Thumbnails Screenshots by Thumbshots">Thumbnail Screenshots by Thumbshots</a></div>
     </div>
   </body>
 </html>

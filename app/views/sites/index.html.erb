@@ -3,24 +3,9 @@
 
 
 <% for site in @sites %>
-  <%= div_for(site) do %>
-    <div class="thumbnail"><%= thumbshot_tag(site) %></div>
-    <div class="content">
-      <h2><%= link_to site.title, site %></h2>    
-      <% if admin? %>
-        <%= link_to "Editar", edit_site_path(site) %> | 
-        <%= link_to "Suprimir", site_path(site), :method => :delete, :confirm => "¿Estás seguro?" %>
-      <% end %>
-      <div class="url"><%= host_from_url(site.url) %></div>
-      <div class="tags">
-        <% for tag in site.tags %>
-          <span class="tag"><%= link_to tag.name, tag %></span>
-        <% end %>
-      </div>      
-      <div class="review"><%= site.review.html_safe %></div>
-    </div>
+  <%= render :layout => site do %>
+    <%= site.review.html_safe %>
   <% end %>
-  <div class="clear"></div>
 <% end %>
 
 <%= render :partial => "pagination" %>
