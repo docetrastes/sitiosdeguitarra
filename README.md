@@ -1,6 +1,8 @@
 sitiosdeguitarra
 ================
 
+This is the code of the site running at [sitiosdeguitarra.com](http://sitiosdeguitarra.com).
+
 Setup on Heroku:
 ---------------
     heroku create sitiosdeguitarra
