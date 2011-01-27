@@ -118,12 +118,26 @@ h3 {
 .site .content {
   float: left;
   margin-left: 20px;
-  width: 650px;
+  width: 550px;
 }
 
 .site {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+#main {
+  float: left;
+}
+
+#sidebar {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+}
+
+#sidebar .tags {
+  margin-top: 20px;
 }
 
 .tag a, .tag a:active, .tag a:visited {

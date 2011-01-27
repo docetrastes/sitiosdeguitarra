@@ -1,5 +1,33 @@
-<% title "New Site" %>
+<% title "Agregar un sitio" %>
 
-<%= render 'form' %>
+Para agregar un sitio a nuestro directorio, debes seguir las siguientes instrucciones:
 
-<p><%= link_to "Back to List", sites_path %></p>
+<ul>
+  <li><p>Tu sitio tiene que ser en español.</p></li>
+  <li><p>Tu sitio tiene que estar relacionado con guitarra.</p></li>
+  <li>
+    <p>
+      Copia y pega el siguiente código a cualquier lugar visible de tu sitio:
+    </p>
+    <p>
+      <textarea cols="55" rows="2" readonly="yes">
+<a href="http://sitiosdeguitarra.com/">Sitios de guitarra</a>
+      </textarea>
+    </p>
+  </li>
+  <li>
+    <p>Envíanos un email a <%= link_to "agregar@sitiosdeguitarra.com" %>. Asegúrate de incluir la dirección de tu sitio a la que quieres que apunte nuestro enlace, la dirección de tu sitio donde pegaste el código anterior y las palabras claves que quieres que utilicemos en el enlace saliente hacia tu sitio.</p>
+    
+    <p>Nuestros enlaces no tienen el atributo <tt>nofollow</tt>.</p>
+  </li>
+  <li>
+    Si tu sitio cumple con todos los requisitos, será agregado al directorio.
+  </li>
+</ul>
+
+<%= link_to '← Página principal', root_path %>
+
+<% if admin? %>
+  <%= render 'form' %>
+  <p><%= link_to "Back to List", sites_path %></p>
+<% end %>
