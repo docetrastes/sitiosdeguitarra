@@ -1,6 +1,7 @@
 Sitiosdeguitarra::Application.routes.draw do
   scope :path_names => { :new => "crear", :edit => "editar" } do
     resources :sites, :path => "sitios", :except => [ :index ]
+    resources :tags
     resource :session, :path => "sesion", :only => [ :new, :create, :destroy ]
   end
 

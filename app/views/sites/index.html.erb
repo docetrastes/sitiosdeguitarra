@@ -12,6 +12,11 @@
         <%= link_to "Suprimir", site_path(site), :method => :delete, :confirm => "¿Estás seguro?" %>
       <% end %>
       <div class="url"><%= host_from_url(site.url) %></div>
+      <div class="tags">
+        <% for tag in site.tags %>
+          <span class="tag"><%= link_to tag.name, tag %></span>
+        <% end %>
+      </div>      
       <div class="review"><%= site.review.html_safe %></div>
     </div>
   <% end %>
