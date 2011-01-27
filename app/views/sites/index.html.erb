@@ -4,7 +4,7 @@
 
 <% for site in @sites %>
   <%= render :layout => site do %>
-    <%= site.review.html_safe %>
+    <%= textilize(site.review, link_to("Leer más sobre #{site.title}...", site)).html_safe %>
   <% end %>
 <% end %>
 

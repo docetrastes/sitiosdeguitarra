@@ -1,7 +1,7 @@
 <% title @site.title %>
 
 <%= render :layout => @site do %>
-    <%= @site.review.html_safe %>
+    <%= textilize(@site.review).html_safe %>
 <% end %>
 
 <% if admin? %>
