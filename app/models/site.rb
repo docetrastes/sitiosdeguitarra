@@ -12,4 +12,8 @@ class Site < ActiveRecord::Base
     def to_param
       "#{id}-#{title.to_url}"
     end
+    
+    def self.per_page
+      4
+    end
 end

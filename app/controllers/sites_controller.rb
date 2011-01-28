@@ -1,7 +1,7 @@
 class SitesController < ApplicationController
   before_filter :require_admin, :except => [ :index, :show, :new ]
   def index
-    @sites = Site.paginate(:page => params[:page], :per_page => 4)
+    @sites = Site.paginate(:page => params[:page])
   end
 
   def show

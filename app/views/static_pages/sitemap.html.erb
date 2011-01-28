@@ -1,7 +1,13 @@
 <% title "Mapa del sitio" %>
 
-<h2>Sitios</h2>
+<h2>Sitios separados por página</h2>
+<ul>
+  <% 1.upto (1.0 * @sites.size / Site.per_page).ceil do |page| %>
+    <li><%= link_to "Sitios para aprender a tocar guitarra - Página #{page}", sites_path(:page => page) %></li>
+  <% end %>
+</ul>
 
+<h2>Todos los sitios</h2>
 <ul>
   <% @sites.each do |site| %>
     <li><%= link_to site.title, site %></li>
