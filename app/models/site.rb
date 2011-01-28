@@ -15,5 +15,5 @@ class Site < ActiveRecord::Base
     
     def self.per_page
       4
-    end
+    end    
 end
