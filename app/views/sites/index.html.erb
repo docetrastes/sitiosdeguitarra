@@ -5,6 +5,9 @@
   <% content_for(:head) { "<link rel='canonical' href='#{root_url}' />".html_safe } %>
 <% end %>
 
+<p>
+  <%= link_to "SitiosDeGuitarra.com", root_path %> es un directorio que recoge y califica sitios web dedicados a la guitarra. El directorio incluye sitios tanto de guitarra acústica como eléctrica y temas como ejercicios para ganar velocidad, acordes, tablaturas y cursos completos de este maravilloso instrumento musical.
+</p>
 
 <% for site in @sites %>
   <%= render :layout => site do %>
