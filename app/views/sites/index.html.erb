@@ -1,6 +1,10 @@
 <% title "Directorio de sitios de guitarra#{params[:page] ? " - Página #{params[:page]}" : ""}" %>
 <% meta_description "Directorio de sitios de guitarra en español y artículos para aprender a tocar guitarra." %>
 
+<% if @sites.current_page == 1 %>
+  <% content_for(:head) { "<link rel='canonical' href='#{root_url}' />".html_safe } %>
+<% end %>
+
 
 <% for site in @sites %>
   <%= render :layout => site do %>

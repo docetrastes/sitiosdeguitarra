@@ -1,6 +1,6 @@
 Sitiosdeguitarra::Application.routes.draw do
   scope :path_names => { :new => "crear", :edit => "editar" } do
-    resources :sites, :path => "sitios", :except => [ :index ]
+    resources :sites, :path => "sitios"
     resources :tags
     resource :session, :path => "sesion", :only => [ :new, :create, :destroy ]
   end
@@ -8,6 +8,5 @@ Sitiosdeguitarra::Application.routes.draw do
   match "/politicas-de-privacidad" => "static_pages#privacy_policy", :as => :privacy_policy
   match "/mapa-del-sitio" => "static_pages#sitemap", :as => :sitemap
 
-  match "/" => "sites#index", :as => :sites
   root :to => "sites#index"
 end
