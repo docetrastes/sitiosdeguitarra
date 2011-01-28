@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">
+  <url> 
+    <loc><%= root_url %></loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url> 
+    <loc><%= sitemap_url %></loc>
+    <priority>0.2</priority>
+  </url>
+  
+  <url> 
+    <loc><%= privacy_policy_url %></loc>
+    <priority>0.1</priority>
+  </url>
+  
+  <% (@sites + @tags).each do |thing| %>
+    <url> 
+      <loc><%= polymorphic_url(thing) %></loc>
+      <priority>0.8</priority>
+    </url>
+  <% end %>
+  
+</urlset>

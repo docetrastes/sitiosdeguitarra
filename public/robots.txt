@@ -4,4 +4,6 @@
 # User-Agent: *
 # Disallow: /
 
+User-Agent: *
 Disallow: /sesion/crear
+Sitemap: http://sitiosdeguitarra.com/mapa-del-sitio.xml
