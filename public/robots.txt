@@ -6,4 +6,5 @@
 
 User-Agent: *
 Disallow: /sesion/crear
+Allow: /
 Sitemap: http://sitiosdeguitarra.com/mapa-del-sitio.xml
