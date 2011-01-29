@@ -9,7 +9,24 @@
   <%= link_to "SitiosDeGuitarra.com", root_path %> es un directorio que recoge y califica sitios web dedicados a la guitarra. El directorio incluye sitios tanto de guitarra acústica como eléctrica y temas como ejercicios para ganar velocidad, acordes, tablaturas y cursos completos de este maravilloso instrumento musical.
 </p>
 
-<% for site in @sites %>
+<%= render :layout => @sites.first do %>
+  <%= textilize(@sites.first.review, link_to("Leer más sobre #{@sites.first.title}...", @sites.first)).html_safe %>
+<% end %>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4711309222734567";
+/* Home page */
+google_ad_slot = "2229498700";
+google_ad_width = 234;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+<% for site in @sites[1..-1] %>
   <%= render :layout => site do %>
     <%= textilize(site.review, link_to("Leer más sobre #{site.title}...", site)).html_safe %>
   <% end %>
