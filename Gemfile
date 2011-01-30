@@ -5,6 +5,7 @@ gem "nifty-generators"
 gem "stringex"
 gem "RedCloth"
 gem "will_paginate","~> 3.0.pre2"
+gem "feedzirra"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
