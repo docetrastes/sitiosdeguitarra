@@ -163,3 +163,7 @@ h3 {
 	background: rgba(0,0,0,0.15);
 	text-decoration: none;
 }
+
+#search {
+  float: right;
+}
