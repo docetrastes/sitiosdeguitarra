@@ -4,10 +4,25 @@
 <h3>Sitios de guitarra en la categoría <span class="tag"><%= link_to @tag.name, @tag %></span></h3>
 
 
-<% for site in @sites %>
+<% @sites.each_with_index do |site, i| %>
   <%= render :layout => site do %>
-      <%= site.review.html_safe %>
+      <%= textilize(site.review).html_safe %>
   <% end %>
+  
+    <% if i < 3 %>
+      <script type="text/javascript"><!--
+      google_ad_client = "ca-pub-4711309222734567";
+      /* Leaderboard (728 x 90) */
+      google_ad_slot = "7424772588";
+      google_ad_width = 728;
+      google_ad_height = 90;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+    <% end %>
+  
 <% end %>
 
 <%= render :partial => "sites/pagination" %>
