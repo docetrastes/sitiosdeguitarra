@@ -4,8 +4,8 @@ module AdsenseHelper
   def adsense_wrapper(style = :leaderboard, &block)
     @adsense_ads_so_far ||= 0
     if @adsense_ads_so_far < 3 && Rails.env != "development"
+      @adsense_ads_so_far += 1      
       yield(block)
-      @adsense_ads_so_far += 1
     else
       case style
       when :leaderboard
