@@ -167,3 +167,28 @@ h3 {
 #search {
   float: right;
 }
+
+.recent_feed_entries {
+  clear: both;
+  margin-top: 10px;
+  border-top: 1px dashed #AAA;
+  width: 490px;
+  margin-left: 40px;
+}
+
+.feed_entry {
+  background: #F3F3F3;
+  padding: 10px;
+  border: 1px dashed #AAA;
+  border-top: none;
+}
+
+.feed_entry .title {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.feed_entry .subtitle {
+  margin-bottom: 5px;
+  color: #666;
+}

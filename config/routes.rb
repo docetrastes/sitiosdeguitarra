@@ -10,5 +10,5 @@ Sitiosdeguitarra::Application.routes.draw do
   match "/mapa-del-sitio" => "static_pages#sitemap", :as => :sitemap
   match "/buscar" => "static_pages#search", :as => :search
 
-  root :to => "sites#index"
+  root :to => "static_pages#home"
 end

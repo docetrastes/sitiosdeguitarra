@@ -10,7 +10,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110127213535) do
+ActiveRecord::Schema.define(:version => 20110130214512) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "feed_entries", :force => true do |t|
+    t.integer  "site_id"
+    t.string   "title"
+    t.text     "summary"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.text     "categories"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sites", :force => true do |t|
     t.string   "title"
@@ -18,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20110127213535) do
     t.text     "review"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "feed_url"
   end
 
   create_table "sites_tags", :id => false, :force => true do |t|
