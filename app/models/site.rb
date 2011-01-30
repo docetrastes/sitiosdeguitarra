@@ -3,6 +3,10 @@ class Site < ActiveRecord::Base
     has_many :feed_entries
     validates_presence_of :title, :url, :review
     
+    def name
+      title
+    end
+    
     def tag_names=(some_names)
       self.tags = some_names.split(",").collect { |name| Tag.find_or_create_by_name(name.strip) }
     end
