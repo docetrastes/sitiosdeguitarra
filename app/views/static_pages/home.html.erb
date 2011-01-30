@@ -25,7 +25,8 @@
     <% if i == 0 %>
       <div class="feed_entry">
         <div class="title">Anuncios</div><div class="subtitle"></div>
-        <% adsense_wrapper(:banner) do %>
+        <%= adsense_wrapper(:banner) do %>
+         Nothing yet.
         <% end %>
       </div>
     <% end %>
@@ -38,7 +39,7 @@
     <%= textilize(site.review, link_to("Leer más sobre #{site.title}...", site)).html_safe %>
   <% end %>
   
-  <% adsense_wrapper do %>
+  <%= adsense_wrapper do %>
     <script type="text/javascript"><!--
     google_ad_client = "ca-pub-4711309222734567";
     /* Leaderboard (728 x 90) */

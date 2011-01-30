@@ -5,7 +5,7 @@ module AdsenseHelper
     @adsense_ads_so_far ||= 0
     if @adsense_ads_so_far < 3 && Rails.env != "development"
       @adsense_ads_so_far += 1      
-      yield(block)
+      capture(&block)
     else
       case style
       when :leaderboard
