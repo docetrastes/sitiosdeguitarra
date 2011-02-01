@@ -1,0 +1,40 @@
+<% title "Artículos sobre guitarra" %>
+
+<div class="recent_feed_entries">
+  <div class="feed_entry">
+    <div class="subtitle">Artículos recientes en la blogósfera guitarrera</div>
+  </div>
+  
+  <% @feed_entries.each_with_index do |feed_entry, i| %>
+  
+    <% if i  % 4 == 0 %>
+      <div class="feed_entry">
+        <div class="title">Anuncios</div><div class="subtitle"></div>
+        <%= adsense_wrapper(:banner) do %>
+          <script type="text/javascript"><!--
+          google_ad_client = "ca-pub-4711309222734567";
+          /* Banner */
+          google_ad_slot = "0036061737";
+          google_ad_width = 468;
+          google_ad_height = 60;
+          //-->
+          </script>
+          <script type="text/javascript"
+          src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+          </script>
+        <% end %>
+      </div>
+    <% end %>
+  
+  
+    <%= div_for(feed_entry) do %>
+      <div class="title"><%= link_to feed_entry.title, feed_entry.url, :target => "_blank" %></div>
+      <div class="subtitle">Publicado hace <%= time_ago_in_words(feed_entry.published_at) %> en <%= link_to feed_entry.site.title, feed_entry.site %></div>
+      <%= feed_entry.truncated_summary.html_safe %>    
+    <% end %>
+  <% end %>
+  
+  <div class="feed_entry">
+    <div class="subtitle"><%= will_paginate(@feed_entries) %></div>
+  </div>
+</div>

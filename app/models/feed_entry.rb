@@ -4,9 +4,12 @@ class FeedEntry < ActiveRecord::Base
   validates_uniqueness_of :guid, :scope => :site_id
 
   serialize :categories, Array
+  
+  scope :recent, order("published_at desc")
 
   def self.update_from_site(site)
     feed = Feedzirra::Feed.fetch_and_parse(site.feed_url)
+    puts "Fetched #{feed.entries.size} feed entries from #{site.feed_url}."
     feed.entries.each do |entry|
       unless exists?(:guid => entry.id, :site_id => site.id)
         create!(:site_id      => site.id,
@@ -16,6 +19,7 @@ class FeedEntry < ActiveRecord::Base
                 :published_at => entry.published,
                 :guid         => entry.id
         )
+        puts "  Created feed entry titled '#{entry.title}'."
       end
     end
   end
