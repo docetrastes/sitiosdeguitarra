@@ -14,7 +14,7 @@ class FeedEntry < ActiveRecord::Base
       unless exists?(:guid => entry.id, :site_id => site.id)
         create!(:site_id      => site.id,
                 :title        => entry.title,
-                :summary      => entry.summary,
+                :summary      => entry.summary.blank? ? entry.content : entry.summary,
                 :url          => entry.url,
                 :published_at => entry.published,
                 :guid         => entry.id
