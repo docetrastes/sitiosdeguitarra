@@ -23,7 +23,7 @@
     <priority>0.1</priority>
   </url>
   
-  <% (@sites + @tags).each do |thing| %>
+  <% (@sites + @tags + @feed_entries).each do |thing| %>
     <url> 
       <loc><%= polymorphic_url(thing) %></loc>
       <priority>0.8</priority>

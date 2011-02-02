@@ -3,7 +3,7 @@
 <h2>Sitios separados por página</h2>
 <ul>
   <% 1.upto((1.0 * @sites.size / Site.per_page).ceil) do |page| %>
-    <li><%= link_to "Sitios para aprender a tocar guitarra - Página #{page}", sites_path(:page => page) %></li>
+    <li><%= link_to "Sitios para aprender a tocar guitarra - Página #{page}", sites_path(:page => (page > 1 ? page : nil)) %></li>
   <% end %>
 </ul>
 
@@ -20,6 +20,21 @@
   <% @tags.each do |tag| %>
     <li><span class="tag"><%= link_to tag.name, tag %></span></li>
   <% end %>
+</ul>
+
+<h2>Artículos separados por página</h2>
+<ul>
+  <% 1.upto((1.0 * @feed_entries.size / FeedEntry.per_page).ceil) do |page| %>
+    <li><%= link_to "Artículos sobre guitarra - Página #{page}", feed_entries_path(:page => (page > 1 ? page : nil)) %></li>
+  <% end %>
+</ul>
+
+
+<h2>Todos los artículos</h2>
+<ul>
+  <% @feed_entries.each do |feed_entry| %>
+    <li><%= feed_entry.site.title %>: <%= link_to feed_entry.title, feed_entry %></li>
+  <% end %>  
 </ul>
 
 <%= link_to '← Página principal', root_path %>

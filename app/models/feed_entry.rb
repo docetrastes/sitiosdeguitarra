@@ -37,4 +37,8 @@ class FeedEntry < ActiveRecord::Base
   def to_param
     "#{id}-#{title.to_url}"
   end
+  
+  def self.per_page
+    12
+  end
 end

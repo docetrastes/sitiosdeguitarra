@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
   def sitemap
     @tags = Tag.all
     @sites = Site.all
+    @feed_entries = FeedEntry.recent
   end
   
   def home
