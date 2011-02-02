@@ -1,36 +1,9 @@
-<% title "Feed Entry" %>
+<% title @feed_entry.title %>
 
-<p>
-  <strong>Site:</strong>
-  <%= @feed_entry.site_id %>
-</p>
-<p>
-  <strong>Title:</strong>
-  <%= @feed_entry.title %>
-</p>
-<p>
-  <strong>Summary:</strong>
-  <%= @feed_entry.summary %>
-</p>
-<p>
-  <strong>Url:</strong>
-  <%= @feed_entry.url %>
-</p>
-<p>
-  <strong>Published At:</strong>
-  <%= @feed_entry.published_at %>
-</p>
-<p>
-  <strong>Guid:</strong>
-  <%= @feed_entry.guid %>
-</p>
-<p>
-  <strong>Categories:</strong>
-  <%= @feed_entry.categories %>
-</p>
+<div class="recent_feed_entries">
+<%= render @feed_entry %>
+</div>
 
-<p>
-  <%= link_to "Edit", edit_feed_entry_path(@feed_entry) %> |
-  <%= link_to "Destroy", @feed_entry, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", feed_entries_path %>
-</p>
+<div style="margin-top: 20px">
+  <%= link_to "← Todos los artículos", feed_entries_path %>
+</div>

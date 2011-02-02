@@ -193,6 +193,10 @@ h3 {
   color: #666;
 }
 
+.feed_entry .subtitle img {
+  vertical-align: middle;
+}
+
 .feed_entry img {
   max-width: 460px;
   max-height: 200px;

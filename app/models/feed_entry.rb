@@ -33,4 +33,8 @@ class FeedEntry < ActiveRecord::Base
     s = words.size <= maximum_words ? s : s + "..."
     image.nil? ? s : image.to_html + s
   end
+  
+  def to_param
+    "#{id}-#{title.to_url}"
+  end
 end
