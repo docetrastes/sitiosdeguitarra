@@ -26,9 +26,11 @@ class FeedEntry < ActiveRecord::Base
   
   def truncated_summary(maximum_words = 30)
     doc = Hpricot(summary)
+    image = doc.search("img").first
     doc.search("img").remove
     words = doc.to_plain_text.split
     s = words[0..maximum_words-1].join(" ")
-    words.size <= maximum_words ? s : s + "..."
+    s = words.size <= maximum_words ? s : s + "..."
+    image.nil? ? s : image.to_html + s
   end
 end

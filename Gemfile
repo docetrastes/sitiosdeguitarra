@@ -7,6 +7,7 @@ gem "RedCloth"
 gem "will_paginate","~> 3.0.pre2"
 gem "feedzirra"
 gem "hpricot"
+gem "RedCloth"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
