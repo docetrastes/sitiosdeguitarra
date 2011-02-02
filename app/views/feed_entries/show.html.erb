@@ -1,2 +1,36 @@
-<h1>FeedEntries#show</h1>
-<p>Find me in app/views/feed_entries/show.html.erb</p>
+<% title "Feed Entry" %>
+
+<p>
+  <strong>Site:</strong>
+  <%= @feed_entry.site_id %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @feed_entry.title %>
+</p>
+<p>
+  <strong>Summary:</strong>
+  <%= @feed_entry.summary %>
+</p>
+<p>
+  <strong>Url:</strong>
+  <%= @feed_entry.url %>
+</p>
+<p>
+  <strong>Published At:</strong>
+  <%= @feed_entry.published_at %>
+</p>
+<p>
+  <strong>Guid:</strong>
+  <%= @feed_entry.guid %>
+</p>
+<p>
+  <strong>Categories:</strong>
+  <%= @feed_entry.categories %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_feed_entry_path(@feed_entry) %> |
+  <%= link_to "Destroy", @feed_entry, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", feed_entries_path %>
+</p>

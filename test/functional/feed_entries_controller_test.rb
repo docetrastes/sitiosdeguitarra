@@ -1,29 +1,37 @@
 require 'test_helper'
 
 class FeedEntriesControllerTest < ActionController::TestCase
-  test "should get index" do
+  def test_index
     get :index
-    assert_response :success
+    assert_template 'index'
   end
 
-  test "should get show" do
-    get :show
-    assert_response :success
+  def test_show
+    get :show, :id => FeedEntry.first
+    assert_template 'show'
   end
 
-  test "should get edit" do
-    get :edit
-    assert_response :success
+  def test_edit
+    get :edit, :id => FeedEntry.first
+    assert_template 'edit'
   end
 
-  test "should get update" do
-    get :update
-    assert_response :success
+  def test_update_invalid
+    FeedEntry.any_instance.stubs(:valid?).returns(false)
+    put :update, :id => FeedEntry.first
+    assert_template 'edit'
   end
 
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
+  def test_update_valid
+    FeedEntry.any_instance.stubs(:valid?).returns(true)
+    put :update, :id => FeedEntry.first
+    assert_redirected_to feed_entry_url(assigns(:feed_entry))
   end
 
+  def test_destroy
+    feed_entry = FeedEntry.first
+    delete :destroy, :id => feed_entry
+    assert_redirected_to feed_entries_url
+    assert !FeedEntry.exists?(feed_entry.id)
+  end
 end

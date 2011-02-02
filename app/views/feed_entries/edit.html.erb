@@ -1,2 +1,36 @@
-<h1>FeedEntries#edit</h1>
-<p>Find me in app/views/feed_entries/edit.html.erb</p>
+<% title "Edit Feed Entry" %>
+
+<%= form_for @feed_entry do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :site_id %><br />
+    <%= f.select :site_id, Site.all.collect {|p| [ p.title, p.id ] } %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :summary %><br />
+    <%= f.text_area :summary %>
+  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.label :published_at %><br />
+    <%= f.datetime_select :published_at %>
+  </p>
+  <p>
+    <%= f.label :guid %><br />
+    <%= f.text_field :guid %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+
+
+<p>
+  <%= link_to "Show", @feed_entry %> |
+  <%= link_to "View All", feed_entries_path %>
+</p>

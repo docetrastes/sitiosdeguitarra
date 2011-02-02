@@ -1,11 +1,9 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
   site_id: 1
   title: MyString
   summary: MyText
   url: MyString
-  published_at: 2011-01-30 22:42:21
+  published_at: 2011-02-02 15:50:40
   guid: MyString
   categories: MyText
 
@@ -14,6 +12,6 @@ two:
   title: MyString
   summary: MyText
   url: MyString
-  published_at: 2011-01-30 22:42:21
+  published_at: 2011-02-02 15:50:40
   guid: MyString
   categories: MyText
