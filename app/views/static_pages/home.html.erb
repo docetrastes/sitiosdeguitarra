@@ -16,11 +16,8 @@
     <div class="subtitle">Artículos recientes en la blogósfera guitarrera</div>
   </div>
   <% @feed_entries.each_with_index do |feed_entry, i| %>
-    <%= div_for(feed_entry) do %>
-      <div class="title"><%= link_to feed_entry.title, feed_entry.url, :target => "_blank" %></div>
-      <div class="subtitle">Publicado hace <%= time_ago_in_words(feed_entry.published_at) %> en <%= link_to feed_entry.site.title, feed_entry.site %></div>
-      <%= feed_entry.truncated_summary.html_safe %>    
-    <% end %>
+      
+    <%= render feed_entry %>
     
     <% if i == 0 %>
       <div class="feed_entry">
