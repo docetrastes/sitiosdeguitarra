@@ -199,5 +199,6 @@ h3 {
 }
 
 .feed_entry img.centered {
-  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
