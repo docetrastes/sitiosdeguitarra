@@ -195,4 +195,9 @@ h3 {
 
 .feed_entry img {
   max-width: 460px;
+  max-height: 200px;
+}
+
+.feed_entry img.centered {
+  text-align: center;
 }
