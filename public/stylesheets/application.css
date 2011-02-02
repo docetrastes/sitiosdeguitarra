@@ -206,3 +206,15 @@ h3 {
   display: block;
   margin: 0 auto;
 }
+
+.guitar_top img{
+  border-bottom: 1px solid black;
+}
+
+.guitar_bottom {
+  margin-top: 10px;
+}
+
+.guitar_bottom img {
+  border-top: 1px solid black;
+}

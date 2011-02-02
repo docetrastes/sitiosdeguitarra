@@ -12,11 +12,19 @@
   <body>
     <div id="container">
       <div id="main">
+        <div class="guitar_top">
+          <%= link_to image_tag("stratocaster_top.png", :alt => "SitiosDeGuitarra.com - Artículos y noticias sobre guitarra"), root_path %>
+        </div>
         <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, :id => "flash_#{name}" %>
         <% end %>
         <%= content_tag :h1, yield(:title) if show_title? %>        
         <%= yield %>
+        
+        <div class="guitar_bottom">
+          <%= link_to image_tag("stratocaster_bottom.png", :alt => "SitiosDeGuitarra.com - Artículos y noticias sobre guitarra"), root_path %>
+        </div>
+        
       </div>
       
       <div id="sidebar">
