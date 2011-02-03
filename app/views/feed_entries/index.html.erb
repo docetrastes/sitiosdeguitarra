@@ -5,6 +5,7 @@
     <div class="subtitle">Artículos recientes en la blogósfera guitarrera</div>
   </div>
   
+  <%= debug @feed_entries.size %>
   <% @feed_entries.each_with_index do |feed_entry, i| %>
   
     <% if i  % 4 == 0 %>
