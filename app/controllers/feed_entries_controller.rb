@@ -2,7 +2,7 @@ class FeedEntriesController < ApplicationController
   before_filter :require_admin, :except => [ :index, :show ]
   
   def index
-    @feed_entries = FeedEntry.recent.paginate(:page => params[:page])
+    @feed_entries = FeedEntry.recent.paginate(:page => params[:page], :per_page => FeedEntry.per_page)
   end
 
   def show
