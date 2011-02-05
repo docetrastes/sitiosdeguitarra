@@ -2,7 +2,7 @@
   <div class="thumbnail"><%= thumbshot_tag(site) %></div>
   <div class="content">
     <% if current_page?(site) %>
-      <h2><%= link_to site.title, site.url %></h2>    
+      <h2><%= link_to site.title, site.url, :target => "_blank" %></h2>    
     <% else %>
       <h2><%= link_to site.title, site %></h2>
     <% end %>
