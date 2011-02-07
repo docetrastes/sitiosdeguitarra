@@ -240,4 +240,6 @@ h3 {
 
 .read_more {
   font-size: 0.9em;
+  padding-left: 16px;
+  background: url(/images/icons/new_window.gif) no-repeat;
 }
