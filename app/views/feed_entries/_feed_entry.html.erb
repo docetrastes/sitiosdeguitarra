@@ -5,7 +5,7 @@
       <%= image_tag("icons/comments.png", :alt => "Discusión sobre #{feed_entry.title}") %>
     <% end %>
     Publicado hace <%= time_ago_in_words(feed_entry.published_at) %> en <%= link_to feed_entry.site.title, feed_entry.site %></div>
-  <%= textilize_feed_entry(feed_entry.truncated_summary).html_safe %>
+  <%= textilize_feed_entry(feed_entry.truncated_summary, feed_entry.url).html_safe %>
   <div class="clear"></div>
   <% if admin? %>
     <div>

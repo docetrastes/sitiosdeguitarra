@@ -3,8 +3,9 @@ module FeedEntriesHelper
   # Taken from http://daringfireball.net/2010/07/improved_regex_for_matching_urls
   URL_REGEXP = '(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\))  )*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))'
     
-  def textilize_feed_entry(text)
+  def textilize_feed_entry(text, url)
     replace_particularities(text)
+    text = text + " <span class='read_more'>#{link_to "Leer más →", url, :target => "_blank"}</span>"
     r = RedCloth.new(text)
     r.no_span_caps = true
     r.to_html

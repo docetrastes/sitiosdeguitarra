@@ -1,3 +1,4 @@
+# encoding: utf-8
 class FeedEntry < ActiveRecord::Base
   belongs_to :site
   validates_presence_of :site_id, :title, :summary, :url, :published_at, :guid
@@ -31,7 +32,7 @@ class FeedEntry < ActiveRecord::Base
     words = doc.to_plain_text.split
     s = words[0..maximum_words-1].join(" ")
     s = words.size <= maximum_words ? s : s + "..."
-    image.nil? ? s : image.to_html + s
+    s = image.nil? ? s : image.to_html + s
   end
   
   def to_param
