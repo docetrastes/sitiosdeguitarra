@@ -22,6 +22,18 @@ h2 {
   overflow: hidden;
 }
 
+.align_center {
+  text-align: center;
+}
+
+.align_left {
+  text-align: left;
+}
+
+.align_right {
+  text-align: right;
+}
+
 #container {
   width: 800px;
   margin: 0 auto;

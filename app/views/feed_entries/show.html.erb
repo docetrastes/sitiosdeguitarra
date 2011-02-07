@@ -1,7 +1,24 @@
 <% title @feed_entry.title %>
 
 <div class="recent_feed_entries">
-<%= render @feed_entry %>
+  <%= render @feed_entry %>
+
+  <div class="feed_entry align_center">
+    <%= adsense_wrapper(:large_rectangle) do %>
+      <script type="text/javascript"><!--
+      google_ad_client = "ca-pub-4711309222734567";
+      /* Large Rectangle on FeedEntries#show */
+      google_ad_slot = "0192378079";
+      google_ad_width = 336;
+      google_ad_height = 280;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+    <% end %>
+  </div>
+
 </div>
 
 <div style="margin-top: 20px">

@@ -2,6 +2,22 @@
 
 <%= render :layout => @site do %>
     <%= textilize(@site.review).html_safe %>
+    
+    
+    <%= adsense_wrapper(:large_rectangle) do %>
+      <script type="text/javascript"><!--
+      google_ad_client = "ca-pub-4711309222734567";
+      /* Large Rectangle on Sites#show */
+      google_ad_slot = "2742886485";
+      google_ad_width = 336;
+      google_ad_height = 280;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>    
+    <% end %>
+    
 <% end %>
 
 <% if admin? %>

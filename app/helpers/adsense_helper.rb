@@ -12,6 +12,8 @@ module AdsenseHelper
         image_tag("https://www.google.com/adsense/static/en_US/images/leaderboard.gif")
       when :banner
         image_tag("https://www.google.com/adsense/static/en_US/images/banner.gif")
+      when :large_rectangle
+        image_tag("https://www.google.com/adsense/static/en_US/images/336x280.gif")
       else
         raise "Not implemented"
       end
