@@ -230,3 +230,10 @@ h3 {
 .guitar_bottom img {
   border-top: 1px solid black;
 }
+
+.ads_title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #990000;
+  padding: 5px 0;
+}
