@@ -14,10 +14,12 @@ module FeedEntriesHelper
   private
   
   def replace_particularities(text)
-    puts text
     # Visto en guitarristas.info
     text.gsub!(/Image: #{URL_REGEXP}/) { "!(centered)#{$1}!" }
     # Visto en bigguitarvideo.net
     text.gsub!("Por favor Login o Register para ver el enlace de descarga.", "")
+    # Visto en guitarrista.com
+    text.gsub!(/>(\s*)Slide Show/ , ">")
+    text
   end
 end
