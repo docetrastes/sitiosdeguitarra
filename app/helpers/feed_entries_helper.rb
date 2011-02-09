@@ -18,6 +18,7 @@ module FeedEntriesHelper
     text.gsub!(/Image: #{URL_REGEXP}/) { "!(centered)#{$1}!" }
     # Visto en bigguitarvideo.net
     text.gsub!("Por favor Login o Register para ver el enlace de descarga.", "")
+    text.gsub!(" Por favor Login...", "...")
     # Visto en guitarrista.com
     text.gsub!(/>(\s*)Slide Show/ , ">")
     text

@@ -14,5 +14,10 @@ class FeedEntriesHelperTest < ActionView::TestCase
       s = replace_particularities(%{<img title="65amps &quot;EMPIRE&quot;" class="imagefield imagefield-field_image" src="http://www.guitarrista.com/sites/default/files/image/65amps_Empire.jpg?1297050764" height="235" alt="65amps &quot;EMPIRE&quot;" width="350" />Slide Show Cabezal a válvulas de 22W con 3 sonidos diferenciados El "Empire" es el resultado de 4 años de investigación y desarrollo por parte de los fundadores de 65amps,...})      
       assert_equal s, %{<img title="65amps &quot;EMPIRE&quot;" class="imagefield imagefield-field_image" src="http://www.guitarrista.com/sites/default/files/image/65amps_Empire.jpg?1297050764" height="235" alt="65amps &quot;EMPIRE&quot;" width="350" /> Cabezal a válvulas de 22W con 3 sonidos diferenciados El "Empire" es el resultado de 4 años de investigación y desarrollo por parte de los fundadores de 65amps,...}
     end
+    
+    should "Remove 'Por favor Login...' as appears on some posts from BigGuitarVideo.net" do
+      s = replace_particularities(%{Descarga este Tab Book de una obra maestra de Joe Satriani en formato PDF: Datos del libro: Formato: Pdf Peso aprox.: 6.39 Mb Servidor: MediaFire Calidad de escaneo: 78% Ver Online: No Por favor Login...})
+      assert_equal s, %{Descarga este Tab Book de una obra maestra de Joe Satriani en formato PDF: Datos del libro: Formato: Pdf Peso aprox.: 6.39 Mb Servidor: MediaFire Calidad de escaneo: 78% Ver Online: No...}
+    end
   end
 end
